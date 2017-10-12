@@ -1,0 +1,6 @@
+#!/bin/sh
+apk add --update openssl
+wget https://github.com/docker/compose/releases/download/1..16.1/run.sh -O /usr/local/bin/docker-compose
+sed -i "s/\/bin\/bash/\/bin\/sh/g" /usr/local/bin/docker-compose
+chmod a+x /usr/local/bin/docker-compose
+docker-compose --help
